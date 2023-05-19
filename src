@@ -1,0 +1,19 @@
+#WORD COUNTS
+import re
+cadena = "Hola!, mi nombre es Bobby Bobby, tengo 14 años y soy un oso muy hermoso"
+#patron = '([a-zA-Z]+)'
+#patron = ^\w\s
+def wordCounts(cadena):
+    dict = {}
+    cadena = re.sub(r'[^\w\s]', '', cadena)
+    cadena = cadena.lower().split(" ")
+    for i in cadena:
+        if i in dict.keys():
+            dict[i] += 1
+        else:
+          dict[i] = 1
+    print(dict)
+
+a = wordCounts(cadena)
+
+print(cadena)
